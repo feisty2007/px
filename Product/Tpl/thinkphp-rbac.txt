@@ -1,0 +1,90 @@
+ 许多人提到有关ThinkPHP都会对它的高效，方便为之折服。但与很多朋友交流后，都对它当中的RBAC权限控制，感到头疼不已。看完这个文档，相信大家一定会有很清晰的了解。并且，以后关于这个框架的权限控制非常熟析，并且能熟练掌握。
+    RBAC许多人听到后会觉得很头疼，不知道这是什么东西。用英文来讲的话就是Role-Based Access Control，用中文来说就是——基于角色的权限访问控制。呵呵，是不是听的头晕了？没那么复杂。你只需要了解一点，它是来控制用户组权限的就得了，有的用户组的用户可以添加，但是有的用户组的用户却可以，就是这样一个简单的东西。如果再搞得大家头晕一点的话，他还包括什么：安全拦截器，认证管理器...等等概念咯。我觉得如果仅仅是要使用的话，这些东西在最开始的时候其实没必要了解。只要清楚，怎么用的，以后对于这些概念即可以一看就懂，一用就通。
+    大家在电影当中看到过一种场景吗？——需要两个人的密码卡，指纹和眼球扫描才能够打开金库。
+    或者说是在现实生活中：一个营业人员能进行一些操作，但是输入错误或者一些特殊情况下面，会叫“经理，权限不够”。这个时候，他们的经理就会拿着自己的IC卡过来，然后输入密码，该营业员就能够进行该项操作了。
+    类似于这样一种两个身份登陆认证才能进行操作的功能，目前ThinkPHP2.0版本中，还不能实现。如果想使用这样的功能，只有大家自己写一个操作类或者是在ThinkPHP进行修改或者扩展了。
+    废话不多说，我们先去下载一个ThinkPHP的框架（注：在1.5版本以后ThinkPHP关于RBAC等扩展类就不包含在核心包当中了，如果大家要下载的话可以去下载最新的ThinkPHP2.0带扩展、示例和文档完整包）。下载地址如下：http://www.thinkphp.cn/Down/（别下成核心包了哦！）
+    下载解压完成，将其放入我们的根目录或者子目录下。
+    我们先跳过去这一段，讲一个权限化分中最重要，大家最容易弄混的地方，就是RBAC需要用到的表和字段。我们先来了解一下RBAC需要用到的数据表。将建立一个五张表，这五张表分别是：
+    1.    用户表（包含三个字段用户编号,用户名和用户密码）
+    2.    用户组表（用户组编号和名字）
+    3.    用户与组的对应关系表（组编号和用户编号）
+    4.    节点表（节点编号，名字，注释，父路径编号，等级）（注：这个表很容易将人搞晕）
+    5.    权限表（组编号，节点编号，父路径编号，等级）01	-- 表的结构 `think_access`此表为五张表中的权限表
+02	CREATE TABLE IF NOT EXISTS `think_access` (
+03	  `role_id` smallint(6) unsigned NOT NULL,
+04	  `node_id` smallint(6) unsigned NOT NULL,
+05	  `level` tinyint(1) NOT NULL,
+06	  `pid` int(11) DEFAULT NULL,
+07	  KEY `groupId` (`role_id`),
+08	  KEY `nodeId` (`node_id`)
+09	) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+10	-- 表的结构 `think_node`此表为五张表中的节点表
+11	CREATE TABLE IF NOT EXISTS `think_node` (
+12	  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
+13	  `name` varchar(20) NOT NULL,
+14	  `title` varchar(50) DEFAULT NULL,
+15	  `pid` smallint(6) unsigned NOT NULL,
+16	  `level` tinyint(1) unsigned NOT NULL,
+17	  PRIMARY KEY (`id`),
+18	  KEY `level` (`level`),
+19	  KEY `pid` (`pid`),
+20	  KEY `name` (`name`)
+21	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+22	-- 表的结构 `think_role`此表为五张表中的用户组表
+23	CREATE TABLE IF NOT EXISTS `think_role` (
+24	  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
+25	  `name` varchar(20) NOT NULL,
+26	  PRIMARY KEY (`id`),
+27	  KEY `pid` (`pid`)
+28	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+29	-- 表的结构 `think_role_user`此表为用户和组对应关系表
+30	CREATE TABLE IF NOT EXISTS `think_role_user` (
+31	  `role_id` mediumint(9) unsigned DEFAULT NULL,
+32	  `user_id` char(32) DEFAULT NULL,
+33	  KEY `group_id` (`role_id`),
+34	  KEY `user_id` (`user_id`)
+35	) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+36	-- 表的结构 `think_user`此表为用户表
+37	CREATE TABLE IF NOT EXISTS `think_user` (
+38	  `id` int(11) NOT NULL AUTO_INCREMENT,
+39	  `username` varchar(100) NOT NULL,
+40	  `password` char(32) NOT NULL,
+41	  PRIMARY KEY (`id`)
+42	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+
+    以下五个表，我现在写好演示用的SQL执行语句帮助大家建表，大家在实验建表的过程中只需要复制使用下面的SQL语句即可：
+    看着是不是又晕了？呵呵，没关系，我们来用一个简单的图表和简易图来像大家说明：
+    表Think_access:
+    Role_ID       Node_id        pid            level
+    用户组的编号    节点表    节点表中的父ID项    节点表中的等级项
+    注：如果用户组id和对应的节点id存在这张表中，就表示用户所在的用户组有权限进行对应的操作权限。
+    表Think_node
+    id    name    title    pid    level
+    节点编号，用来产生关联关系，主键，自增方便索引    项目，模块或者动作的名字（严格区分大小写）    项目或模块的备注，方便管理员认识和了解    注①    只能为1,2,3分别代表项目，模块，操作动作
+    注①    ：
+    1）如果是项目名称则项目是顶级的，它上面没有父路径编号（pid），因此pid则为0；例如，网站下有一个Admin项目，它是顶级的。因此没有父路径编号（pid），此处应填0，如果它为第一次插入数据库的，它的id则为1。全字段插入数据库应为：
+    id    name    title    pid    level
+    1    Admin    Admin项目节点    0    1
+    2）如果某项目下有一个模块。则父路径编号（pid）则为该某块所在的项目编号（id）。例如，Admin下面有一个模块为User,它是第二个插入数据库的。因此，模块的父路径（pid）应填1。全字段插入数据库应为：
+    id    name    title    pid    level
+    2    User    User模块节点    0    2
+    3）如果在某模块下面有三个动作（或成员方法），分别Index(显示)、insert（插入）、delete（删除），它们三个的父路径为该模块的编号。例如User模块下有Index、insert、delete三个动作或成员方法，它们分别是第三，四，五次插入数据库的。他们的父路径编号(pid)应填2。全字段插入数据库应为：
+    id    name    title    pid    level
+    3    User    User模块下显示动作    0    2
+    4    Index    User模块下插入动作    0    2
+    5    insert    User模块下删除动作    0    2
+    表think_role
+    id    name
+    组的编号（主键）    组的名字
+    注：此表中可以插入父路径编号（pid）产生组的包含关系。对应的父路径编号（pid）为所属组的编号(id)。
+    表think_user
+    id    username    password
+    用户编号(主键,int类型)    用户名(varchar类型)    密码(char类型32位)
+    注：id在下一张表中结合think_role产生用户与组的关联关系。建议username设为唯一的，password采用32位md5加密。
+    表think_role_user
+    group_id    User_id
+    组编号(主键，int类型)    用户编号（主键，int类型）
+    注：用户编号（user_id）对应哪一个group_id，则哪个用户就属于哪一个组。可以让同一个用户对应多个组。就意味着，一个用户具有多个组的属性和操作权限。
+    最难理解，也是最核心的数据库结构和存储结构说完了，对照着这个数据库进行插入，添加修改即可。

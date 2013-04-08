@@ -1,0 +1,48 @@
+<layout name="default"/>
+<fieldset>
+      <div id="legend" class="">
+        <legend class="">当前用户</legend>
+      </div>
+    
+<table class="table table-hover table-condensed">
+	 	<thead>
+	        <tr>
+	          <th>#</th>
+	          <th>用户名</th>	          
+	          <th>真实姓名</th>
+	          <th>Email</th>          
+	          <th>角色</th>
+	          <th>当前状态<th>
+	          <th>最后登录时间</th>
+	          <eq name="is_userable" value="1">
+			      <th>编辑</th>
+			  </eq>
+	        </tr>
+	      </thead>
+		  <tbody>
+		  	 <volist name="vos" id="vo">
+		    <tr>
+		      <td>{$id}</td>		
+		      <td>{$vo.username}</td>
+		      <td>{$vo.realname}</td>
+		      <td>{$vo.email}</td>	      
+		      <td>{$vo.role_name}</td>
+		      <td>
+		      	<eq name="vo.status" value="1">
+		      		启用
+		      	<else/>
+		      		锁定
+		      	</eq>
+		      </td>
+		      <td>{$vo.lastlogin}</td>
+		      <eq name="is_editable" value="1">
+		    	<td>
+	          		<a href="__APP__/Admin/modifyuser?id={$vo.id}">编辑</a>
+	          		<a href="__APP__/Admin/deleteuser?id={$vo.id}">删除</a>
+		         </td>
+			   </eq>
+		    </tr>        
+		    </volist>
+		  </tbody>
+	</table>
+</field>

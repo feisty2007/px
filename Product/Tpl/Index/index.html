@@ -1,0 +1,46 @@
+<layout name="indextemplate"/>
+<div class="span8 offset2">
+  <div class="hero-unit">
+  <h3>欢迎!</h3>
+  	<p>使用本系统可以<a href="__APP__/Modify/add">录入</a><span class="label label-warning">研发专用</span>图纸变化情况，还可以查看图纸变更情况，包括图纸版本、更改时间、修改人员等。</p>
+    <p>当然也可以查看单张图纸的版本变化<span class="label label-warning">右上搜索</span></p>
+  	<p>
+        <a href="__APP__/Modify/querythisweek" class="btn btn-primary btn-large">本周统计&raquo;</a>
+        <a href="__APP__/Modify/querythismonth" class="btn btn-primary btn-large">本月统计&raquo;</a>
+    </p>
+  </div>
+  <hr/>
+        <!-- Example row of columns -->
+
+    
+    <div>
+      	<h3>最新修改列表</h3>
+      <table class="table table-hover table-condensed">
+     	<thead>
+            <tr>
+              <th>#</th>
+              <th>图纸代号</th>
+              <th>零件名称</th>
+              <th>版本</th>          
+              <th>修改日期</th>
+              <th>修改工程师</th>
+              <th>类型</th>
+            </tr>
+          </thead>
+    	  <tbody>
+    	  	 <volist name="ms" id="vo">
+    	    <tr>
+    	      <td>{$vo.id}</td>
+    	      <td><a href="__APP__/Modify/queryone/?drawing_no={$vo.drawing_no|urlencode}">{$vo.drawing_no}</a></td>
+    	      <td>{$vo.drawing_name}</td>
+    	      <td>{$vo.Version}</td>	      
+    	      <td>{$vo.create_time}</td>
+    	      <td>{$vo.modify_user_name}</td>
+            <td>{$vo.modify_type}</td>
+    	    </tr>        
+    	    </volist>
+    	  </tbody>
+    	</table>
+      <p><a class="btn" href="__APP__/Modify/select">查看全部 &raquo;</a></p>
+    </div>
+</div>

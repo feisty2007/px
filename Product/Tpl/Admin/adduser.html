@@ -1,0 +1,87 @@
+<layout name="default"/>
+
+<form class="form-horizontal" method="post" action="__URL__/adduser">
+    <fieldset>
+      <div id="legend" class="">
+        <legend class="">新增用户</legend>
+      </div>
+    
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">登录名</label>
+          <div class="controls">
+            <input type="text" placeholder="登录名（一般为名字的全拼)" class="input-xlarge" name="username">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">密码</label>
+          <div class="controls">
+            <input type="password" placeholder="密码" class="input-xlarge" name="password">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">确认密码</label>
+          <div class="controls">
+            <input type="password" placeholder="密码" class="input-xlarge" name="re_password">
+            <p class="help-block"></p>
+          </div>
+    </div>
+           
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">真实姓名</label>
+          <div class="controls">
+            <input type="text" placeholder="姓名" class="input-xlarge" name="realname">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">Email:</label>
+          <div class="controls">
+            <input type="text" placeholder="电子邮件地址" class="input-xlarge" name="email">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+   	<div class="control-group">
+
+          <!-- Select Basic -->
+          <label class="control-label">用户组</label>
+          <div class="controls">
+            <select class="input-xlarge" name='role_id'>
+               <volist name="vos" id="vo">
+                  <option value="{$vo.id}">{$vo.role_name}</option>
+               </volist>              
+            </select>
+          </div>
+
+    </div>
+
+    
+    <div class="control-group">
+          <label class="control-label"></label>
+
+          <!-- Button -->
+          <div class="controls">
+            <button class="btn btn-primary" name="submit">保存</button>
+            <button class="btn btn-default">Cancel</button>
+          </div>
+        
+    </div>
+    </fieldset>
+  </form>

@@ -1,0 +1,48 @@
+<layout name="indextemplate"/>
+<div class="span8 offset2">
+			<h4>{$drawing_no}共找到{$mscount}条结果：</h4>
+			 <table class="table table-hover table-bordered">
+			 	<thead>
+			        <tr>
+			          <th>#</th>
+			          <th>图纸代号</th>
+			          <th>零件名称</th>
+			          <th>版本</th>          
+			          <th>修改日期</th>
+			          <th>修改工程师</th>
+			          <th>更改类型</th>
+			          <eq name="is_editable" value="1">
+			          	<th>编辑</th>
+			          </eq>
+			          <eq name="is_newable" value="1">
+			          	<th>参照</th>
+			          </eq>
+			        </tr>
+			      </thead>
+				  <tbody>
+				  	 <volist name="ms" id="vo">
+				    <tr>
+				      <td>{$vo.id}</td>
+				      <td>{$vo.drawing_no}</td>
+				      <td>{$vo.drawing_name}</td>
+				      <td>{$vo.Version}</td>	      
+				      <td>{$vo.create_time}</td>
+				      <td>{$vo.modify_user_name}</td>
+				      <td>{$vo.modify_type}</td>
+				      <eq name="is_editable" value="1">
+			          	<td>
+			          		<a href="__APP__/Modify/modifyone?id={$vo.id}">编辑</a>
+	          				<a href="__APP__/Modify/disable?id={$vo.id}">删除</a>
+			          	</td>
+			          </eq>
+
+			          <eq name="is_newable" value="1">
+			          	<td>
+			          		<a href="__APP__/Modify/addbytemplate?id={$vo.id}">新增</a>
+			          	</td>
+			          </eq>
+				    </tr>        
+				    </volist>
+				  </tbody>
+			</table>
+</div>
