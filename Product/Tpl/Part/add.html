@@ -1,0 +1,62 @@
+ <layout name="indextemplate"/>
+ <div class="span8 offset1">
+  <form class="form-horizontal" method="post" action="__URL__/Add">
+    <fieldset>
+      <div id="legend" class="">
+        <legend class="">标准件变更单</legend>
+      </div>
+    
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">存货编码</label>
+          <div class="controls">
+            <input type="text" placeholder="EB" class="input-xxlarge" name="part_no">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">存货名称</label>
+          <div class="controls">
+            <input type="text" placeholder="16x16x8-5stgHSB" class="input-xxlarge" name="part_name">
+            <p class="help-block"></p>
+          </div>
+        </div><div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">规格型号</label>
+          <div class="controls">
+            <input type="text" placeholder="叶轮、O型圈" class="input-xxlarge" name="part_spec">
+            <p class="help-block"></p>
+          </div>
+        </div>
+  
+
+    <div class="control-group">
+          <!-- Text input-->
+          <label class="control-label" for="input01">需求(新增|启用|更改)</label>
+          <div class="controls">
+            <input type="text" placeholder="1" class="input-xxlarge" name="modify_type" value="新增">
+            <p class="help-block"></p>
+          </div>
+        </div>   
+   
+    
+    <div class="control-group">
+          <label class="control-label"></label>
+
+          <!-- Button -->
+          <div class="controls">
+            <input type=hidden name="modify_user" value="{$_SESSION['username']}"/>
+            <button type="submit" class="btn btn-primary" name="submit">保存</button>
+            <button class="btn btn-default">Cancel</button>
+          </div>        
+    </div>
+   
+    </fieldset>
+  </form>
+</div>

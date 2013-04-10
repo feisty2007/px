@@ -12,14 +12,7 @@
 			array("product_no","require","必须输入制造编号！"),
 			array("drawing_no","require","必须输入图号"),
 			array("Version","require","输入正确的版本号"),
-			array("modify_user_name","require","输入修改者姓名"),
-			);
-
-		//定义自动时间
-		//protected $autoCreateTimestamps = array('create_time');
-
-		//protected $autoUpdateTimestamps = array('update_time');
-
-		//protected $autoTimeFormat = 'Y-m-d';		
+			//array("modify_user_name","require","输入修改者姓名"),
+			);		
 	}
 ?>

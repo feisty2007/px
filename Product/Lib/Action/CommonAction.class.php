@@ -4,7 +4,7 @@
 	{
 		public function is_Logined()
 		{
-			return session("user_logined")==1;
+			return session("?user_logined");
 		}
 
 		

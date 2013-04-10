@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -45,12 +45,10 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <!-- <li class="active"><a href="__APP__">Home</a></li> -->
-             <eq name="_SESSION['user_logined']" value="1">
-                  <li><a href="__APP__/Admin/index">欢迎你，{$_SESSION['username']}!</a></li>
+             <?php if(($_SESSION['user_logined']) == "1"): ?><li><a href="__APP__/Admin/index">欢迎你，<?php echo ($_SESSION['username']); ?>!</a></li>
                   <li><a href="__APP__/Admin/logout">注销</a></li>
-              <else/>
-                  <li class="active"><a href="__APP__/Admin/login">登录</a></li>
-              </eq>
+              <?php else: ?>
+                  <li class="active"><a href="__APP__/Admin/login">登录</a></li><?php endif; ?>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -67,17 +65,12 @@
 
             <ul class="nav nav-list">
               <li class="nav-header">单据</li>
-              <eq name="is_newable" value="1">
-                  <li><a href="__APP__/Modify/add">新建改图单</a></li>
-                  <li><a href="__APP__/Part/add">标准件变更单</a></li>
-              </eq>
-              <eq name="is_editable" value="1">
-                  <li><a href="__APP__/Modify/select">编辑</a></li>
-              </eq>
+              <?php if(($is_newable) == "1"): ?><li><a href="__APP__/Modify/add">新建改图单</a></li>
+                  <li><a href="__APP__/Part/add">标准件变更单</a></li><?php endif; ?>
+              <?php if(($is_editable) == "1"): ?><li><a href="__APP__/Modify/select">编辑</a></li><?php endif; ?>
             </ul>
 
-            <eq name="is_userable" value="1">
-                  <ul class="nav nav-list">
+            <?php if(($is_userable) == "1"): ?><ul class="nav nav-list">
                     <li class="nav-header">用户管理</li>
                     <li><a href="__APP__/Admin/adduser">新建</a></li>
                     <li><a href="__APP__/Admin/listuser">查看</a></li>
@@ -87,14 +80,14 @@
                     <li><a href="__APP__/Modify/selectthismonth">新建</a></li>
                     <li><a href="#">修改</a></li>
                     <li><a href="">权限查看</a></li>
-                  </ul>
-            </eq>
+                  </ul><?php endif; ?>
 
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
             <div >
-              {__CONTENT__}
+              
+<p>欢迎来到管理页面</p>
             </div>
         </div>
       </div>

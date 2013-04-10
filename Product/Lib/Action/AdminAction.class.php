@@ -86,7 +86,7 @@
 			}
 			else
 			{
-				$modify = D('user');			
+				$modify = D('User');			
 				if($modify->create()){
 					$modify_id = $modify->add();
 
@@ -125,6 +125,89 @@
 			}
 
 		}
+
+		public function ChangePassword()
+		{
+			if(!$this->is_Logined())
+			{
+				$this->assign("jumpUrl","__URL__/login");
+				$this->error("请首先登陆!");
+			}
+			else
+			{
+				if(!isset($_POST['submit']))
+				{
+					//$this->assign("user_id",session("user_id"));
+					$this->display();
+				}
+				else
+				{
+					$old_pass=$this->_param('old_pass');
+					$new_pass=$this->_param('new_pass');
+					$new2_pass=$this->_param('new2_pass');
+					$user_id=$this->_param('user_id');					
+
+					$DAO = D('user');
+
+					$condition=new stdClass();
+					$condition->id=$user_id;
+					$condition->password=$old_pass;
+
+					$count=$DAO->where($condition)->count();
+					if($count==1)
+					{
+						$user['id']=$user_id;
+						$user['password']=$new_pass;
+
+						if($DAO->save($user))
+						{
+							$this->assign("jumpUrl","__APP__");
+							$this->success("修改密码成功!");
+						}
+						else
+						{
+							$this->error("修改密码错误！");
+						}
+					}
+					else
+					{
+						$this->error("旧密码错误！");
+					}
+					
+				}
+			}
+		}
+
+
+		public function RegisterUser()
+		{
+			if(!isset($_POST["submit"]))
+			{							
+				$this->display();
+			}
+			else
+			{
+				$modify = D('user');			
+				if($modify->create()){
+					$modify_id = $modify->add();
+
+					if($modify_id){
+						$this->success("注册用户成功，请联系管理员申请有关权限！");
+					}
+					else
+					{
+						$this->error("注册用户失败");
+					}
+				}
+				else
+				{
+					$this->error($modify->getError());
+				}
+
+				//$this->success("添加用户成功！");
+			}	
+		}
+
 
 		public function ModifyUser()
 		{

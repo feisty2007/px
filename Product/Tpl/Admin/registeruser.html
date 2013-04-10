@@ -1,9 +1,9 @@
-<layout name="default"/>
+<layout name="indextemplate"/>
 
-<form class="form-horizontal" method="post" action="__URL__/adduser">
+<form class="form-horizontal" method="post" action="__URL__/registeruser">
     <fieldset>
       <div id="legend" class="">
-        <legend class="">新增用户</legend>
+        <legend class="">注册用户</legend>
       </div>
     
 
@@ -57,21 +57,7 @@
             <p class="help-block"></p>
           </div>
         </div>
-
-   	<div class="control-group">
-
-          <!-- Select Basic -->
-          <label class="control-label">用户组</label>
-          <div class="controls">
-            <select class="input-xlarge" name='role_id'>
-               <volist name="vos" id="vo">
-                  <option value="{$vo.id}">{$vo.role_name}</option>
-               </volist>              
-            </select>
-          </div>
-
-    </div>
-
+   	
     
     <div class="control-group">
           <label class="control-label"></label>
