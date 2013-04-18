@@ -654,3 +654,22 @@ INFO: [ view_end ] --START--
 INFO: Run ShowPageTrace Behavior [ RunTime:0.001373s ]
 INFO: [ view_end ] --END-- [ RunTime:0.001452s ]
 
+[ 2013-04-18T17:09:45+08:00 ] ERR: [4] syntax error, unexpected ')', expecting ']' D:\Product\Lib\Action\CommonAction.class.php 第 71 行.
+[ 2013-04-18T17:10:04+08:00 ] 10.10.4.41 /Product/index.php/Modify/querythisweek
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001401s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001520s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+SQL: select modify_id,is_nuclear,drawing_no,drawing_name,id,modify_user_name,create_time,Version from product_modify where YEARWEEK(date_format(create_time,'%Y-%m-%d'))=YEARWEEK(now()) and status=1 order by id desc [ RunTime:0.001319s ]
+
+[ 2013-04-18T17:10:33+08:00 ] 10.10.4.41 /Product/index.php/Modify/querythismonth
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001296s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001401s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000992s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001085s ]
+SQL: select modify_id,is_nuclear,drawing_no,drawing_name,id,modify_user_name,create_time,Version from product_modify where date_format(create_time,'%Y-%m')=date_format(now(),'%Y-%m') and status=1 order by id desc [ RunTime:0.001428s ]
+

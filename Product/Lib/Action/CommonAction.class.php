@@ -62,13 +62,13 @@
 		{
 			foreach($list as $v){
 		   		$this_year = date('y');
-		   		$isNu="P";
-		   		if($v["is_nuclear"] == 1)
-		   			$isNu="H";
+		   		// $isNu="P";
+		   		// if($v["is_nuclear"] == 1)
+		   		// 	$isNu="H";
 
-		   		$echono = $isNu.$this_year.'R-'.$v['id'];
+		   		//$echono = $isNu.$this_year.'R-'.$v['id'];
 
-		    	echo $echono.",".iconv("utf-8","gb2312",$v["drawing_no"]).",".iconv("utf-8","gb2312",$v["drawing_name"]).",".iconv("utf-8","gb2312",$v["Version"]).",".iconv("utf-8","gb2312",$v['create_time']).",".iconv("utf-8","gb2312",$v['modify_user_name'])."\n";
+		    	echo iconv("utf-8","gb2312",$v['modify_id']).",".iconv("utf-8","gb2312",$v["drawing_no"]).",".iconv("utf-8","gb2312",$v["drawing_name"]).",".iconv("utf-8","gb2312",$v["Version"]).",".iconv("utf-8","gb2312",$v['create_time']).",".iconv("utf-8","gb2312",$v['modify_user_name'])."\n";
 		   }
 		}
 	}

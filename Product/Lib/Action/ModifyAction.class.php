@@ -206,7 +206,7 @@
 		{
 			$DAO = D();
 
-			$list = $DAO->query("select id,is_nuclear,drawing_no,drawing_name,id,modify_user_name,create_time,Version from product_modify where YEARWEEK(date_format(create_time,'%Y-%m-%d'))=YEARWEEK(now()) order by id desc");
+			$list = $DAO->query("select modify_id,is_nuclear,drawing_no,drawing_name,id,modify_user_name,create_time,Version from product_modify where YEARWEEK(date_format(create_time,'%Y-%m-%d'))=YEARWEEK(now()) and status=1 order by id desc");
 
 		   $filename=strtotime("now").".csv";
    		   header("Content-Type:application/vnd.ms-excel;charset=UTF-8");
@@ -227,7 +227,7 @@
 		{
 		   $DAO = D();
  
-		   $list = $DAO->query("select id,is_nuclear,drawing_no,drawing_name,id,modify_user_name,create_time,Version from product_modify where date_format(create_time,'%Y-%m')=date_format(now(),'%Y-%m') order by id desc");
+		   $list = $DAO->query("select modify_id,is_nuclear,drawing_no,drawing_name,id,modify_user_name,create_time,Version from product_modify where date_format(create_time,'%Y-%m')=date_format(now(),'%Y-%m') and status=1 order by id desc");
 
 		   $filename=strtotime("now").".csv";
    		   header("Content-Type:application/vnd.ms-excel;charset=UTF-8");
