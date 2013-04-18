@@ -63,49 +63,23 @@
     </div>
     <div class="container">
             
-<div class="span8 offset2">
-  <div class="hero-unit">
-  <h3>欢迎!</h3>
-  	<p>在这里可以<a href="__APP__/Modify/add">录入</a><span class="label label-warning">研发专用</span>图纸变化情况，还可以查看图纸变更情况，包括图纸版本、更改时间、修改人员等。</p>
-    <p>当然也可以查看单张图纸的版本变化<span class="label label-warning">右上搜索</span></p>
-  	<p>
-        <a href="__APP__/Modify/querythisweek" class="btn btn-primary btn-large">本周统计&raquo;</a>
-        <a href="__APP__/Modify/querythismonth" class="btn btn-primary btn-large">本月统计&raquo;</a>
-    </p>
-  </div>
-  <hr/>
-        <!-- Example row of columns -->
 
-    
-    <div>
-      	<h3>最新修改列表</h3>
-      <table class="table table-hover table-condensed">
-     	<thead>
-            <tr>
-              <th>#</th>
-              <th>图纸代号</th>
-              <th>零件名称</th>
-              <th>版本</th>          
-              <th>修改日期</th>
-              <th>修改工程师</th>
-              <th>类型</th>
-            </tr>
-          </thead>
-    	  <tbody>
-    	  	 <?php if(is_array($ms)): $i = 0; $__LIST__ = $ms;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-    	      <td><?php echo ($vo["modify_id"]); ?></td>
-    	      <td><a href="__APP__/Modify/queryone/?drawing_no=<?php echo (urlencode($vo["drawing_no"])); ?>"><?php echo ($vo["drawing_no"]); ?></a></td>
-    	      <td><?php echo ($vo["drawing_name"]); ?></td>
-    	      <td><?php echo ($vo["Version"]); ?></td>	      
-    	      <td><?php echo ($vo["create_time"]); ?></td>
-    	      <td><?php echo ($vo["modify_user_name"]); ?></td>
-            <td><?php echo ($vo["modify_type"]); ?></td>
-    	    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-    	  </tbody>
-    	</table>
-      <p><a class="btn" href="__APP__/Modify/select">查看全部 &raquo;</a></p>
-    </div>
-</div>        
+<h4>Change Log</h1>
+<hr>
+
+<h5>2013-4-10</h2>
+<p>添加“修改密码”功能，添加“用户注册”功能，默认用户为“未认证用户”</p>
+<hr/>
+
+<h5>2013-4-9</h2>
+<p>添加“标准件更改单”功能</p>
+<hr/>
+
+
+<h5>2013-4-8</h2>
+<p>修正IE浏览器下无法保存的问题。</p>
+<hr/>
+        
     </div>
 
     <!-- Placed at the end of the document so the pages load faster -->

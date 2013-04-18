@@ -135,6 +135,9 @@
 			}
 			else
 			{
+				$this->is_newable = $this->is_Newable();
+				$this->is_userable = $this->is_Userable();
+				$this->is_editable = $this->is_Editable();
 				if(!isset($_POST['submit']))
 				{
 					//$this->assign("user_id",session("user_id"));

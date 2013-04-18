@@ -87,91 +87,31 @@
         <div class="span9">
             <div >
               
-<script src="../Public/bootstrap/js/jquery-1.9.1.js"></script> 
+ <table class="table table-hover table-condensed">
+ 	<thead>
+        <tr>
+          <th>#</th>
+          <th>图纸代号</th>
+          <th>零件名称</th>
+          <th>版本号</th>          
+          <th>修改日期</th>
+          <th>修改工程师</th>
+          <th>更改类型</th>
+        </tr>
+      </thead>
+	  <tbody>
+	  	 <?php if(is_array($ms)): $i = 0; $__LIST__ = $ms;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+	      <td><?php echo ($vo["id"]); ?></td>
+	      <td><?php echo ($vo["drawing_no"]); ?></td>
+	      <td><?php echo ($vo["drawing_name"]); ?></td>
+	      <td><?php echo ($vo["Version"]); ?></td>	      
+	      <td><?php echo ($vo["create_time"]); ?></td>
+	      <td><?php echo ($vo["modify_user_name"]); ?></td>
+	      <td>><?php echo ($vo["modify_type"]); ?></td>
+	    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+	  </tbody>
+</table>
 
-<script type="text/javascript">
-    function dosubmit(obj)
-    {
-      var old_pass,new_pass,new2_pass;
-
-      old_pass= $("#old_pass").val();
-      new_pass = $("#new_pass").val();
-      new2_pass = $("#new2_pass").val();
-
-      if( old_pass =='' || new_pass == '' || new2_pass == '')
-      {
-         alert("密码不能为空！");
-         return false;
-      }
-      else
-      {
-        if( new_pass != new2_pass)
-        {
-          alert("请保持新密码和其确认密码一致!");
-          return false;
-        }
-      }
-
-
-      return true;
-    }
-      
-</script>
-
-<form class="form-horizontal" method="post" action="__URL__/changepassword" onsubmit="return dosubmit(this);">
-    <fieldset>
-      <div id="legend" class="">
-        <legend class="">修改密码</legend>
-      </div>
-    
-
-    <div class="control-group">
-
-          <!-- Text input-->
-          <label class="control-label" for="input01">旧密码</label>
-          <div class="controls">
-            <input type="password" placeholder="密码" class="input-xlarge" name="old_pass" id="old_pass">
-            <p class="help-block"></p>
-          </div>
-        </div>
-       
-
-    <div class="control-group">
-
-          <!-- Text input-->
-          <label class="control-label" for="input01">新密码</label>
-          <div class="controls">
-            <input type="password" placeholder="密码" class="input-xlarge" name="new_pass" id="new_pass">
-            <p class="help-block"></p>
-          </div>
-        </div>
-
-
-    <div class="control-group">
-
-          <!-- Text input-->
-          <label class="control-label" for="input01">确认密码</label>
-          <div class="controls">
-            <input type="password" placeholder="密码" class="input-xlarge" name="new2_pass" id="new2_pass">
-            <p class="help-block"></p>
-          </div>
-    </div>
-           
-   
-    
-    <div class="control-group">
-          <label class="control-label"></label>
-
-          <!-- Button -->
-          <div class="controls">
-            <input type="hidden" value="<?php echo ($_SESSION['user_id']); ?>" name="user_id"/>
-            <button type="submit" class="btn btn-primary" name="submit">保存</button>
-            <button class="btn btn-default">Cancel</button>
-          </div>
-        
-    </div>
-    </fieldset>
-  </form>
 
             </div>
         </div>

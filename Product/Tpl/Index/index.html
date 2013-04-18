@@ -2,7 +2,7 @@
 <div class="span8 offset2">
   <div class="hero-unit">
   <h3>欢迎!</h3>
-  	<p>使用本系统可以<a href="__APP__/Modify/add">录入</a><span class="label label-warning">研发专用</span>图纸变化情况，还可以查看图纸变更情况，包括图纸版本、更改时间、修改人员等。</p>
+  	<p>在这里可以<a href="__APP__/Modify/add">录入</a><span class="label label-warning">研发专用</span>图纸变化情况，还可以查看图纸变更情况，包括图纸版本、更改时间、修改人员等。</p>
     <p>当然也可以查看单张图纸的版本变化<span class="label label-warning">右上搜索</span></p>
   	<p>
         <a href="__APP__/Modify/querythisweek" class="btn btn-primary btn-large">本周统计&raquo;</a>
@@ -30,7 +30,7 @@
     	  <tbody>
     	  	 <volist name="ms" id="vo">
     	    <tr>
-    	      <td>{$vo.id}</td>
+    	      <td>{$vo.modify_id}</td>
     	      <td><a href="__APP__/Modify/queryone/?drawing_no={$vo.drawing_no|urlencode}">{$vo.drawing_no}</a></td>
     	      <td>{$vo.drawing_name}</td>
     	      <td>{$vo.Version}</td>	      

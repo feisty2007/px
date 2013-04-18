@@ -1,0 +1,656 @@
+[ 2013-04-18T11:57:21+08:00 ] 10.10.4.21 /Product/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001665s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.047747s ]
+SQL: SELECT * FROM `product_modify` WHERE ( status=1 ) ORDER BY id desc LIMIT 20   [ RunTime:0.003711s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.003057s ]
+INFO: [ view_template ] --END-- [ RunTime:0.003210s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user_logined D:\Product\Runtime\Cache\70e4ac6229bd5f1254ecfd4db6987037.php 第 48 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.052410s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052507s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001582s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001232s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001644s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001439s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006195s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001690s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001783s ]
+
+[ 2013-04-18T16:18:51+08:00 ] 10.10.4.41 /Product/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001989s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002185s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.028364s ]
+SQL: SELECT * FROM `product_modify` WHERE ( status=1 ) ORDER BY id desc LIMIT 20   [ RunTime:0.003482s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002938s ]
+INFO: [ view_template ] --END-- [ RunTime:0.003059s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user_logined D:\Product\Runtime\Cache\70e4ac6229bd5f1254ecfd4db6987037.php 第 48 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.043377s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043465s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001589s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001613s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001113s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001261s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005861s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001736s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001822s ]
+
+[ 2013-04-18T16:18:54+08:00 ] 10.10.4.41 /Product/index.php/Admin/login
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.018381s ]
+INFO: [ route_check ] --END-- [ RunTime:0.018503s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001434s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001377s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001476s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.047673s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047776s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001209s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000819s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000814s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001644s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004767s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001333s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001427s ]
+
+[ 2013-04-18T16:19:01+08:00 ] 10.10.4.41 /Product/index.php/Admin/login
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001252s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001357s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001472s ]
+SQL: SHOW COLUMNS FROM `product_user` [ RunTime:0.029214s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product_user` WHERE ( `username` = 'admin' ) AND ( `password` = 'e8856' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.003208s ]
+SQL: SELECT `id` FROM `product_user` WHERE ( `username` = 'admin' ) AND ( `password` = 'e8856' ) AND ( `status` = 1 )  [ RunTime:0.000943s ]
+SQL: UPDATE `product_user` SET `lastlogin`='2013-04-18 16:19:01' WHERE ( id=1 ) [ RunTime:0.001264s ]
+SQL: SELECT role_right FROM product_role INNER JOIN product_user ON product_user.role_id=product_role.id WHERE product_user.id=1 [ RunTime:0.001045s ]
+SQL: SELECT `realname` FROM `product_user` WHERE ( id=1 )  [ RunTime:0.000718s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001196s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001286s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.031223s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031329s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000782s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000742s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000603s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000860s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003208s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001062s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001138s ]
+
+[ 2013-04-18T16:19:02+08:00 ] 10.10.4.41 /Product/index.php/Admin/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001653s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001797s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001177s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001086s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001193s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.073610s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073712s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000805s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000745s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000607s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000851s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003257s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001232s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001321s ]
+
+[ 2013-04-18T16:19:05+08:00 ] 10.10.4.41 /Product/index.php/Modify/add
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001312s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001433s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001117s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001734s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001850s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.069744s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.069848s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000827s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000804s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001036s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000979s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003953s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001557s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001640s ]
+
+[ 2013-04-18T16:19:17+08:00 ] 10.10.4.41 /Product/index.php/Modify/Insert
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001511s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001654s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001418s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.023727s ]
+SQL: INSERT INTO `product_modify` (`product_no`,`product_name`,`drawing_name`,`drawing_no`,`Version`,`modify_type`,`is_nuclear`,`note`,`modify_user_name`,`create_time`,`input_ip`) VALUES ('e','f','x','z','t','换图',1,'','Administrator','2013-04-18 16:19:16','10.10.4.41') [ RunTime:0.001059s ]
+SQL: SELECT `is_nuclear` FROM `product_modify` WHERE ( id=62 )  [ RunTime:0.000567s ]
+NOTIC: [8] Undefined variable: is_nuclear D:\Product\Lib\Action\ModifyAction.class.php 第 96 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001446s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001547s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.012717s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012840s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000738s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000933s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000659s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000965s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003552s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001361s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001456s ]
+
+[ 2013-04-18T16:19:22+08:00 ] 10.10.4.41 /Product/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001677s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.017966s ]
+SQL: SELECT * FROM `product_modify` WHERE ( status=1 ) ORDER BY id desc LIMIT 20   [ RunTime:0.004260s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000876s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000962s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.017152s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017320s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001360s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000795s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000916s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001215s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004551s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001416s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001500s ]
+
+[ 2013-04-18T16:19:32+08:00 ] 10.10.4.41 /Product/index.php/Modify/add
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001430s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001550s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001052s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001143s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000773s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000859s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.016415s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016523s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001012s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000876s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000747s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001078s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003987s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.002162s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002255s ]
+
+[ 2013-04-18T16:19:40+08:00 ] 10.10.4.41 /Product/index.php/Modify/Insert
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001509s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001647s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001324s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.028182s ]
+SQL: INSERT INTO `product_modify` (`product_no`,`product_name`,`drawing_name`,`drawing_no`,`Version`,`modify_type`,`is_nuclear`,`note`,`modify_user_name`,`create_time`,`input_ip`) VALUES ('zz','ee','ff','tt','xx','换图',1,'','Administrator','2013-04-18 16:19:40','10.10.4.41') [ RunTime:0.003473s ]
+SQL: SELECT `is_nuclear` FROM `product_modify` WHERE ( id=63 )  [ RunTime:0.000433s ]
+NOTIC: [8] Undefined variable: is_nuclear D:\Product\Lib\Action\ModifyAction.class.php 第 96 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001049s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001151s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.012404s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012543s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001052s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001155s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000720s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000950s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004168s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001349s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001449s ]
+
+[ 2013-04-18T16:19:45+08:00 ] 10.10.4.41 /Product/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001367s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.018665s ]
+SQL: SELECT * FROM `product_modify` WHERE ( status=1 ) ORDER BY id desc LIMIT 20   [ RunTime:0.003767s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000887s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000975s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.018287s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018387s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001065s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000931s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000778s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000908s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003928s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001404s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001497s ]
+
+[ 2013-04-18T16:20:39+08:00 ] 10.10.4.41 /Product/index.php/Modify/add
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001900s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002018s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001092s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001180s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001856s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002364s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.016122s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016267s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001024s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000895s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000691s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000864s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003722s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.003220s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003319s ]
+
+[ 2013-04-18T16:20:48+08:00 ] ERR: [1] Call to a member function add() on a non-object D:\Product\Lib\Action\ModifyAction.class.php 第 107 行.
+[ 2013-04-18T16:21:24+08:00 ] 10.10.4.41 /Product/index.php/Modify/Insert
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.002436s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002574s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001998s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.024738s ]
+SQL: INSERT INTO `product_modify` (`product_no`,`product_name`,`drawing_name`,`drawing_no`,`Version`,`modify_type`,`is_nuclear`,`note`,`modify_user_name`,`create_time`,`input_ip`) VALUES ('eee','ddd','xx','ccc','1','换图',1,'','Administrator','2013-04-18 16:21:24','10.10.4.41') [ RunTime:0.004144s ]
+SQL: SELECT `is_nuclear` FROM `product_modify` WHERE ( id=65 )  [ RunTime:0.000596s ]
+SQL: SHOW COLUMNS FROM `product_nuclear` [ RunTime:0.005902s ]
+SQL: INSERT INTO `product_nuclear` () VALUES () [ RunTime:0.003648s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002138s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002258s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.016386s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016528s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001274s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.002147s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001142s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001358s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006207s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001732s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001818s ]
+
+[ 2013-04-18T16:21:29+08:00 ] 10.10.4.41 /Product/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001394s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.027225s ]
+SQL: SELECT * FROM `product_modify` WHERE ( status=1 ) ORDER BY id desc LIMIT 20   [ RunTime:0.004175s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001516s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001613s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.017058s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017152s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000962s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000784s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000618s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000897s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003493s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001078s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001154s ]
+
+[ 2013-04-18T16:25:00+08:00 ] 10.10.4.41 /Product/index.php/Modify/add
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001685s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001801s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001157s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001254s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001947s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002054s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.020426s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020532s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001234s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001136s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001330s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.002572s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006606s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001656s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001781s ]
+
+[ 2013-04-18T16:25:08+08:00 ] ERR: [1] Cannot use object of type stdClass as array D:\Product\Lib\Action\ModifyAction.class.php 第 106 行.
+[ 2013-04-18T16:27:47+08:00 ] 10.10.4.41 /Product/index.php/Modify/Insert
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.002582s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002730s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001503s ]
+NOTIC: [8] session_start(): ps_files_cleanup_dir: opendir(C:\Windows\temp) failed: No such file or directory (2) D:\Product\ThinkPHP\Common\functions.php 第 552 行.
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.022690s ]
+SQL: INSERT INTO `product_modify` (`product_no`,`product_name`,`drawing_name`,`drawing_no`,`Version`,`modify_type`,`is_nuclear`,`note`,`modify_user_name`,`create_time`,`input_ip`) VALUES ('eee','fff','zz','tt','1','换图',1,'','Administrator','2013-04-18 16:27:47','10.10.4.41') [ RunTime:0.003856s ]
+SQL: SELECT `is_nuclear` FROM `product_modify` WHERE ( id=67 )  [ RunTime:0.000708s ]
+SQL: SHOW COLUMNS FROM `product_nuclear` [ RunTime:0.005956s ]
+SQL: INSERT INTO `product_nuclear` (`modifyId`) VALUES (67) [ RunTime:0.003872s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001447s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001543s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.016346s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016579s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000997s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001689s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001118s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001486s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005547s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001856s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001938s ]
+
+[ 2013-04-18T16:27:52+08:00 ] 10.10.4.41 /Product/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001008s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001101s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.010077s ]
+SQL: SELECT * FROM `product_modify` WHERE ( status=1 ) ORDER BY id desc LIMIT 20   [ RunTime:0.003844s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001709s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001809s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.018004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018112s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001172s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000992s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000739s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000886s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004051s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001064s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001140s ]
+
+[ 2013-04-18T16:34:46+08:00 ] 10.10.4.41 /Product/index.php/Modify/add
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.002056s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002176s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001848s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001972s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002084s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.021427s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021546s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001502s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001383s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000927s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001232s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005327s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001321s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001395s ]
+
+[ 2013-04-18T16:34:54+08:00 ] 10.10.4.41 /Product/index.php/Modify/Insert
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001379s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001499s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001346s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.024447s ]
+SQL: INSERT INTO `product_modify` (`product_no`,`product_name`,`drawing_name`,`drawing_no`,`Version`,`modify_type`,`is_nuclear`,`note`,`modify_user_name`,`create_time`,`input_ip`) VALUES ('eee','zz','ff','tt','xxx','换图',1,'','Administrator','2013-04-18 16:34:54','10.10.4.41') [ RunTime:0.003780s ]
+SQL: SELECT `is_nuclear` FROM `product_modify` WHERE ( id=68 )  [ RunTime:0.000435s ]
+SQL: SHOW COLUMNS FROM `product_nuclear` [ RunTime:0.006227s ]
+SQL: INSERT INTO `product_nuclear` (`modifyId`) VALUES (68) [ RunTime:0.003524s ]
+SQL: UPDATE `product_modify` SET `modify_id`='H13R-3' WHERE ( id=68 ) [ RunTime:0.000844s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001470s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001573s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.013008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013153s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001013s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000995s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000799s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000954s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004045s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001352s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001449s ]
+
+[ 2013-04-18T16:35:00+08:00 ] 10.10.4.41 /Product/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001180s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001279s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.020411s ]
+SQL: SELECT * FROM `product_modify` WHERE ( status=1 ) ORDER BY id desc LIMIT 20   [ RunTime:0.004412s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.004000s ]
+INFO: [ view_template ] --END-- [ RunTime:0.004115s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.017720s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017826s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001121s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001225s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000851s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000986s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004461s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001083s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001164s ]
+
+[ 2013-04-18T16:36:02+08:00 ] 10.10.4.41 /Product/index.php/Modify/add
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001713s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001868s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001588s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001069s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001189s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.017578s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017707s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001020s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000793s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000620s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000854s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003529s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001129s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001214s ]
+
+[ 2013-04-18T16:36:11+08:00 ] 10.10.4.41 /Product/index.php/Modify/Insert
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001592s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001722s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001133s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001232s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.021293s ]
+SQL: INSERT INTO `product_modify` (`product_no`,`product_name`,`drawing_name`,`drawing_no`,`Version`,`modify_type`,`note`,`modify_user_name`,`create_time`,`input_ip`) VALUES ('ee','ff','zz','tt','xx','换图','','Administrator','2013-04-18 16:36:11','10.10.4.41') [ RunTime:0.003696s ]
+SQL: SELECT `is_nuclear` FROM `product_modify` WHERE ( id=69 )  [ RunTime:0.000573s ]
+SQL: UPDATE `product_modify` SET `modify_id`='P13R-69' WHERE ( id=69 ) [ RunTime:0.000878s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001031s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001120s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.013193s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013326s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000772s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000737s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000603s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000856s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003194s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001125s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001219s ]
+
+[ 2013-04-18T16:36:16+08:00 ] 10.10.4.41 /Product/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001133s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001232s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.022519s ]
+SQL: SELECT * FROM `product_modify` WHERE ( status=1 ) ORDER BY id desc LIMIT 20   [ RunTime:0.006578s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001040s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001143s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.017298s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017393s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001613s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001067s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000841s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001096s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004965s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001754s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001853s ]
+
+[ 2013-04-18T16:44:44+08:00 ] 10.10.4.41 /Product/index.php/Modify/add
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001963s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002095s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001890s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002047s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002151s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.020088s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020211s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001539s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001133s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001102s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001152s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005225s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001573s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001658s ]
+
+[ 2013-04-18T16:44:57+08:00 ] 10.10.4.41 /Product/index.php/Modify/Insert
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001601s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001740s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001312s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.026090s ]
+SQL: INSERT INTO `product_modify` (`product_no`,`product_name`,`drawing_name`,`drawing_no`,`Version`,`modify_type`,`is_nuclear`,`note`,`modify_user_name`,`create_time`,`input_ip`) VALUES ('ee','zz','ff','tt','xx','换图',1,'','Administrator','2013-04-18 16:44:57','10.10.4.41') [ RunTime:0.003615s ]
+SQL: SELECT `is_nuclear` FROM `product_modify` WHERE ( id=70 )  [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `product_nuclear` [ RunTime:0.007017s ]
+SQL: INSERT INTO `product_nuclear` (`modifyId`) VALUES (70) [ RunTime:0.002591s ]
+SQL: UPDATE `product_modify` SET `modify_id`='H13R-004' WHERE ( id=70 ) [ RunTime:0.001102s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001306s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001412s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.013105s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013261s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001138s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000944s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000690s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000862s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003895s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001074s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001151s ]
+
+[ 2013-04-18T16:45:02+08:00 ] 10.10.4.41 /Product/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001326s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.023027s ]
+SQL: SELECT * FROM `product_modify` WHERE ( status=1 ) ORDER BY id desc LIMIT 20   [ RunTime:0.003907s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001411s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001521s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.017763s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017895s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001296s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001013s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001199s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001219s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005014s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001474s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001564s ]
+
+[ 2013-04-18T16:57:05+08:00 ] 10.10.4.41 /Product/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001578s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.027795s ]
+SQL: SELECT * FROM `product_modify` WHERE ( status=1 ) ORDER BY id desc LIMIT 20   [ RunTime:0.003811s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002147s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002271s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.020239s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020336s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001254s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001172s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001021s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001206s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004899s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001373s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001452s ]
+

@@ -93,13 +93,32 @@
 					$year=date('y');
 
 					$is_nuclears = $modify->field("is_nuclear")->where('id='.$modify_id)->select();
-					$is_nuclear = $is_nuclear[0]['is_nuclear'];
+					$is_nuclear = $is_nuclears[0]['is_nuclear'];
 
 					$type_flage = 'P';
+					$r_modify_id = $modify_id;
 					if($is_nuclear==1)
+					{
 						$type_flage = 'H';
 
-					$all_modify_id=$type_flage.$year."R-".$modify_id;
+						$nuclear = M('nuclear');
+						$nuclear->create();
+						$nuclear->modifyId=$modify_id;
+						// $data=new stdClass();
+						// $data['modifyId']=$modify_id;
+
+						//$r_modify_id=$DAO->data($data)->add();
+
+						$r_modify_id=$nuclear->add();
+					}
+
+					$r_modify_id=sprintf("%03d",$r_modify_id);
+					$all_modify_id=$type_flage.$year."R-".$r_modify_id;
+
+					//$data['id']=$modify_id;
+					$data['modify_id']=$all_modify_id;
+					$modify->where('id='.$modify_id)->save($data);
+
 					$this->assign("jumpUrl","__APP__");
 					$this->assign("waitSecond",5);
 					$this->success("添加成功！系统更改编号:<font color=red>".$all_modify_id."</font>");

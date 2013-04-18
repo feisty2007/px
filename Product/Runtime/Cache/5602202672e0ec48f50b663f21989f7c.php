@@ -87,92 +87,45 @@
         <div class="span9">
             <div >
               
-<script src="../Public/bootstrap/js/jquery-1.9.1.js"></script> 
-
-<script type="text/javascript">
-    function dosubmit(obj)
-    {
-      var old_pass,new_pass,new2_pass;
-
-      old_pass= $("#old_pass").val();
-      new_pass = $("#new_pass").val();
-      new2_pass = $("#new2_pass").val();
-
-      if( old_pass =='' || new_pass == '' || new2_pass == '')
-      {
-         alert("密码不能为空！");
-         return false;
-      }
-      else
-      {
-        if( new_pass != new2_pass)
-        {
-          alert("请保持新密码和其确认密码一致!");
-          return false;
-        }
-      }
-
-
-      return true;
-    }
-      
-</script>
-
-<form class="form-horizontal" method="post" action="__URL__/changepassword" onsubmit="return dosubmit(this);">
-    <fieldset>
+<fieldset>
       <div id="legend" class="">
-        <legend class="">修改密码</legend>
+        <legend class="">当前用户</legend>
       </div>
     
-
-    <div class="control-group">
-
-          <!-- Text input-->
-          <label class="control-label" for="input01">旧密码</label>
-          <div class="controls">
-            <input type="password" placeholder="密码" class="input-xlarge" name="old_pass" id="old_pass">
-            <p class="help-block"></p>
-          </div>
-        </div>
-       
-
-    <div class="control-group">
-
-          <!-- Text input-->
-          <label class="control-label" for="input01">新密码</label>
-          <div class="controls">
-            <input type="password" placeholder="密码" class="input-xlarge" name="new_pass" id="new_pass">
-            <p class="help-block"></p>
-          </div>
-        </div>
-
-
-    <div class="control-group">
-
-          <!-- Text input-->
-          <label class="control-label" for="input01">确认密码</label>
-          <div class="controls">
-            <input type="password" placeholder="密码" class="input-xlarge" name="new2_pass" id="new2_pass">
-            <p class="help-block"></p>
-          </div>
-    </div>
-           
-   
-    
-    <div class="control-group">
-          <label class="control-label"></label>
-
-          <!-- Button -->
-          <div class="controls">
-            <input type="hidden" value="<?php echo ($_SESSION['user_id']); ?>" name="user_id"/>
-            <button type="submit" class="btn btn-primary" name="submit">保存</button>
-            <button class="btn btn-default">Cancel</button>
-          </div>
-        
-    </div>
-    </fieldset>
-  </form>
-
+<table class="table table-hover table-condensed">
+	 	<thead>
+	        <tr>
+	          <th>#</th>
+	          <th>用户名</th>	          
+	          <th>真实姓名</th>
+	          <th>Email</th>          
+	          <th>角色</th>
+	          <th>当前状态<th>
+	          <th>最后登录时间</th>
+	          <?php if(($is_userable) == "1"): ?><th>编辑</th><?php endif; ?>
+	        </tr>
+	      </thead>
+		  <tbody>
+		  	 <?php if(is_array($vos)): $i = 0; $__LIST__ = $vos;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+		      <td><?php echo ($id); ?></td>		
+		      <td><?php echo ($vo["username"]); ?></td>
+		      <td><?php echo ($vo["realname"]); ?></td>
+		      <td><?php echo ($vo["email"]); ?></td>	      
+		      <td><?php echo ($vo["role_name"]); ?></td>
+		      <td>
+		      	<?php if(($vo["status"]) == "1"): ?>启用
+		      	<?php else: ?>
+		      		锁定<?php endif; ?>
+		      </td>
+		      <td><?php echo ($vo["lastlogin"]); ?></td>
+		      <?php if(($is_editable) == "1"): ?><td>
+	          		<a href="__APP__/Admin/modifyuser?id=<?php echo ($vo["id"]); ?>">编辑</a>
+	          		<a href="__APP__/Admin/deleteuser?id=<?php echo ($vo["id"]); ?>">删除</a>
+		         </td><?php endif; ?>
+		    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+		  </tbody>
+	</table>
+</field>
             </div>
         </div>
       </div>
