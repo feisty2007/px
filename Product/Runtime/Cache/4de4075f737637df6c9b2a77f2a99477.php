@@ -79,7 +79,7 @@
 	      </thead>
 		  <tbody>
 		  	 <?php if(is_array($ms)): $i = 0; $__LIST__ = $ms;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-		      <td><?php echo ($vo["id"]); ?></td>
+		      <td><?php echo ($vo["modify_id"]); ?></td>
 		      <td><a href="__APP__/Modify/queryone/?drawing_no=<?php echo (urlencode($vo["drawing_no"])); ?>"><?php echo ($vo["drawing_no"]); ?></a></td>
 		      <td><?php echo ($vo["drawing_name"]); ?></td>
 		      <td><?php echo ($vo["Version"]); ?></td>	      

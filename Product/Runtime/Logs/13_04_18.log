@@ -673,3 +673,26 @@ INFO: Run ReadHtmlCache Behavior [ RunTime:0.000992s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001085s ]
 SQL: select modify_id,is_nuclear,drawing_no,drawing_name,id,modify_user_name,create_time,Version from product_modify where date_format(create_time,'%Y-%m')=date_format(now(),'%Y-%m') and status=1 order by id desc [ RunTime:0.001428s ]
 
+[ 2013-04-18T17:16:48+08:00 ] 10.10.4.41 /Product/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001773s ]
+SQL: SHOW COLUMNS FROM `product_modify` [ RunTime:0.008145s ]
+SQL: SELECT * FROM `product_modify` WHERE ( status=1 ) ORDER BY id desc LIMIT 10   [ RunTime:0.003466s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001979s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002084s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user_logined D:\Product\Runtime\Cache\70e4ac6229bd5f1254ecfd4db6987037.php 第 48 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.040118s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040191s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001079s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000998s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000830s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001448s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004615s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001882s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001988s ]
+

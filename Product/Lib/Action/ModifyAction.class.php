@@ -97,13 +97,15 @@
 
 					$type_flage = 'P';
 					$r_modify_id = $modify_id;
-					if($is_nuclear==1)
+					$b_is_nulcar = ($is_nuclear == 1);
+					if($b_is_nulcar)
 					{
 						$type_flage = 'H';
 
 						$nuclear = M('nuclear');
 						$nuclear->create();
 						$nuclear->modifyId=$modify_id;
+						$nuclear->create_time=date('Y-m-d');
 						// $data=new stdClass();
 						// $data['modifyId']=$modify_id;
 
@@ -111,7 +113,22 @@
 
 						$r_modify_id=$nuclear->add();
 					}
+					else
+					{
+						$modify_table = M('modify_table');
+						$modify_table->create();
+						$modify_table->modifyid=$modify_id;
+						$modify_table->create_time=date('Y-m-d');
+						// $data=new stdClass();
+						// $data['modifyId']=$modify_id;
 
+						//$r_modify_id=$DAO->data($data)->add();
+
+						$r_modify_id=$modify_table->add();	
+					}
+
+
+					$r_modify_id = $this->getThisYearId($r_modify_id,$b_is_nulcar);
 					$r_modify_id=sprintf("%03d",$r_modify_id);
 					$all_modify_id=$type_flage.$year."R-".$r_modify_id;
 
