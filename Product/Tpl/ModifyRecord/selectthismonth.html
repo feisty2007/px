@@ -1,0 +1,28 @@
+<layout name="default"/>
+ <table class="table table-hover table-condensed">
+ 	<thead>
+        <tr>
+          <th>#</th>
+          <th>图纸代号</th>
+          <th>零件名称</th>
+          <th>版本号</th>          
+          <th>修改日期</th>
+          <th>修改工程师</th>
+          <th>更改类型</th>
+        </tr>
+      </thead>
+	  <tbody>
+	  	 <volist name="ms" id="vo">
+	    <tr>
+	      <td>{$vo.id}</td>
+	      <td>{$vo.drawing_no}</td>
+	      <td>{$vo.drawing_name}</td>
+	      <td>{$vo.Version}</td>	      
+	      <td>{$vo.create_time}</td>
+	      <td>{$vo.modify_user_name}</td>
+	      <td>>{$vo.modify_type}</td>
+	    </tr>        
+	    </volist>
+	  </tbody>
+</table>
+
